@@ -300,7 +300,7 @@ section .projects .project {
   margin-top: 0px;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 800px) {
   section .projects {
     flex-direction: column;
   }
@@ -311,6 +311,12 @@ section .projects .project {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+  }
+}
+
+@media (max-width: 1180px) {
+  section .projects {
+    flex-direction: column;
   }
 }
 
