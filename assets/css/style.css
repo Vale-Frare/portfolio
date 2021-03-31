@@ -300,7 +300,7 @@ section .projects .project {
   margin-top: 0px;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 800px) {
   section .projects {
     flex-direction: column;
   }
@@ -311,6 +311,48 @@ section .projects .project {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 30px;
+  }
+  li {
+    font-size: 30px;
+  }
+  .progressbar-10::before{
+    font-size: 30px;
+  }
+  .progressbar-20::before{
+    font-size: 30px;
+  }
+  .progressbar-30::before{
+    font-size: 30px;
+  }
+  .progressbar-40::before{
+    font-size: 30px;
+  }
+  .progressbar-50::before{
+    font-size: 30px;
+  }
+  .progressbar-60::before{
+    font-size: 30px;
+  }
+  .progressbar-70::before{
+    font-size: 30px;
+  }
+  .progressbar-80::before{
+    font-size: 30px;
+  }
+  .progressbar-90::before{
+    font-size: 30px;
+  }
+  .progressbar-100::before{
+    font-size: 30px;
   }
 }
 
