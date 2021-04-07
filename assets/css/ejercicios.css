@@ -1,0 +1,34 @@
+:root {
+  --primary-color: #2F243A;
+  --secondary-color: #444054;
+  --bright-text: #ECE5F0;
+}
+
+.calculator {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+input {
+  border: solid 2px var(--primary-color);
+  border-radius: 20px;
+  text-align: center;
+  width: 60px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+button {
+  border: solid 2px var(--primary-color);
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  color: var(--bright-text);
+}
+
+button:active {
+  border: solid 2px var(--primary-color);
+  border-radius: 20px;
+  background-color: var(--bright-text);
+  color: var(--primary-color);
+}
