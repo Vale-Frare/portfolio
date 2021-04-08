@@ -55,6 +55,119 @@
           </div>
         </section>
       </div>
+      <div class="line">
+        <section style="flex-grow: 1">
+          <h2>3: Repetición</h2>
+          <div class="calculator">
+            Repetir
+            <input id="val" type="text" name="" value="">
+            x
+            <input id="rep" type="text" name="" value="">
+            <button type="button" name="button" onclick="repetir(val, rep, out)">Repetir</button>
+          </div>
+        </section>
+        <section id="out">
+        </section>
+      </div>
+      <div class="line">
+        <section style="flex-grow: 1">
+          <h2>4: Celsius a Centígrados</h2>
+          <div class="calculator">
+            Celsius
+            <input id="cel" type="text" name="" value="" onchange="convertCelToCent(cent, cel)">
+            Centígrados
+            <input id="cent" type="text" name="" value="" onchange="convertCelToCent(cel, cent)">
+            <button type="button" name="button" onclick="convertCelToCent(cel, cent, true)">Limpiar</button>
+          </div>
+        </section>
+      </div>
+      <div class="line">
+        <section style="flex-grow: 1">
+          <h2>4.1: Celsius a Fahrenheit</h2>
+          <div class="calculator">
+            Celsius
+            <input id="cel2" type="text" name="" value="" onchange="convertCelToFahr(cel2, fahr, 0)">
+            Fahrenheit
+            <input id="fahr" type="text" name="" value="" onchange="convertCelToFahr(cel2, fahr, 1)">
+            <button type="button" name="button" onclick="convertCelToFahr(cel2, fahr, 2)">Limpiar</button>
+          </div>
+        </section>
+      </div>
+      <div class="line">
+        <section style="flex-grow: 1">
+          <h2>5: Palabra y Letras</h2>
+          <div class="calculator">
+            <input id="palabra" type="text" name="" value="" onchange="contar(palabra, letras)">
+            Tiene
+            <input id="letras" type="text" name="" value="">
+            Letras
+          </div>
+        </section>
+      </div>
+      <div class="line">
+        <section style="flex-grow: 1">
+          <h2>6: Par o Inpar</h2>
+          <div class="calculator">
+            <input id="num" type="text" name="" value="" onchange="parOInpar(num, par)">
+            <span id="par">es</span>
+          </div>
+        </section>
+      </div>
+      <div class="line">
+        <section style="flex-grow: 1">
+          <h2>7: Multiplos de 3</h2>
+          <div class="calculator">
+            <input id="rang1" type="text" name="" value="1" onchange="multiplosTres(rang1, rang2, multiplos)">
+            entre
+            <input id="rang2" type="text" name="" value="20" onchange="multiplosTres(rang1, rang2, multiplos)">
+            =
+            <input id="multiplos" type="text" name="" value="">
+            <script type="text/javascript">multiplosTres(rang1, rang2, multiplos);</script>
+          </div>
+        </section>
+      </div>
+      <div class="line">
+        <section style="flex-grow: 1">
+          <h2>8: Primos hasta ?</h2>
+          <div class="calculator">
+            Hasta
+            <input id="rangP" type="text" name="" value="30" onchange="primos(rangP, primosI)">
+            =
+            <input id="primosI" type="text" name="" value="">
+            <script type="text/javascript">primos(rangP, primosI);</script>
+          </div>
+        </section>
+      </div>
+      <div class="line">
+        <section style="flex-grow: 0">
+          <h2>9: Sos?</h2>
+          <div class="calculator">
+            <input id="nombre" type="text" name="" value="" placeholder="Nombre">
+            <input id="apellido" type="text" name="" value="" placeholder="Apellido">
+            <input id="edad" type="text" name="" value="" placeholder="Edad">
+            <input id="ciudad" type="text" name="" value="" placeholder="Ciudad De Nacimiento">
+            <button type="button" name="button" onclick="generarTexto(nombre,apellido,edad,ciudad,generatedText)">Mostrar</button>
+          </div>
+        </section>
+        <section id="generatedText">
+
+        </section>
+      </div>
+      <div class="line">
+        <section style="flex-grow: 1">
+          <h2>10: Numeros rango</h2>
+          <div class="calculator">
+            Desde
+            <input id="rang11" type="text" name="" value="18" onchange="hasta(rang11, rang21, numerosrang)">
+            hasta
+            <input id="rang21" type="text" name="" value="2" onchange="hasta(rang11, rang21, numerosrang)">
+            =
+            <input id="numerosrang" type="text" name="" value="">
+            <script type="text/javascript">hasta(rang11, rang21, numerosrang);</script>
+          </div>
+        </section>
+      </div>
+      <div class="line"></div>
     </div>
     <div class="footer"></div>
   </body>
