@@ -19,6 +19,26 @@ input {
   margin-left: 20px;
 }
 
+#palabra {
+  width: 160px;
+}
+
+#multiplos {
+  width: 300px;
+}
+
+#primosI {
+  width: 300px;
+}
+
+#ciudad {
+  width: 130px;
+}
+
+#numerosrang {
+  width: 250px;
+}
+
 button {
   border: solid 2px var(--primary-color);
   border-radius: 20px;
