@@ -10,6 +10,7 @@ class PlayScene extends Phaser.Scene {
         this.load.audio('jump', 'assets/audio/jump.wav');
         this.load.audio('starpickup', 'assets/audio/starpickup.wav');
         this.load.audio('dead', 'assets/audio/dead.wav');
+        this.load.audio('fire', 'assets/audio/fire.ogg');
         
         this.load.image('red', 'assets/red.png');
         this.load.image('blue', 'assets/blue.png');
@@ -41,6 +42,9 @@ class PlayScene extends Phaser.Scene {
         jump = this.sound.add('jump');
         starpickup = this.sound.add('starpickup');
         dead = this.sound.add('dead');
+
+        fireAtmos = this.sound.add('fire', {loop: true, volume: 0})
+        fireAtmos.play();
 
         // Set controls
         left = document.getElementsByClassName("left");
@@ -270,6 +274,7 @@ class PlayScene extends Phaser.Scene {
         document.getElementsByClassName("fire")[1].style.top = `${(Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) + 30}%`;
         document.getElementsByClassName("fire")[2].style.top = `${(Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) + 30}%`;
         document.getElementsByClassName("lava")[0].style.top = `${(Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) + 115}%`;      
+        fireAtmos.volume = Phaser.Math.Clamp((.50 - Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650)), 0, 1);
         if ((Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) < 40) {
             if (document.getElementsByClassName("broken-glass")[0].style.opacity != 1) {
                 glass.play();
@@ -300,10 +305,18 @@ function collectStar (player, star)
     }else if (star.texture.key == "rotoshield") {
         activarRotoescudo();
     }else {
-        score += 10;
-        bajarLava(2);
+        if (star.tintBottomLeft == 0x0000FF) {
+            score += 15;
+            bajarLava(2);
+        }
+        else {
+            score += 10;
+            bajarLava(2);
+        }
     }
     scoreText.setText(`Puntos: ${score}`);
+
+    console.log(stars.getChildren()[0]);
 
     particulas.forEach(function(part) {
         if (star == part.star) {
@@ -312,13 +325,23 @@ function collectStar (player, star)
     },this);
 
     if (stars.countActive(true) === 0)
-    {
+    {   
         //  A new batch of stars to collect
-        stars.children.iterate(function (child) {
+        if (star.tintBottomLeft == 0x0000FF) {
+            stars.children.iterate(function (child) {
 
-            child.enableBody(true, child.x, 0, true, true);
+                child.enableBody(true, child.x, 0, true, true);
+                child.setTint(0xFFFFFF);
 
-        });
+            });
+        }else {
+            stars.children.iterate(function (child) {
+
+                child.enableBody(true, child.x, 0, true, true);
+                child.setTint(0x0000FF);
+
+            });
+        }
 
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 

@@ -56,3 +56,4 @@ var glass;
 var jump;
 var starpickup;
 var dead;
+var fireAtmos;

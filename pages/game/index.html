@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <title>Lava Jumper</title>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="retryscene.js"></script>
     <script type="text/javascript" src="mainmenu.js"></script>
@@ -145,7 +147,17 @@
     </style>
 </head>
 <body>
-
+    <div class="header" style="transition: 1s; margin-top: -250px; background-color:#0f0f0f">
+        <a href="../.." class="home">
+          <i class="bi bi-house-door-fill" style="font-size: 2rem;color: white;"></i>
+        </a>
+        <div class="title" style="display:flex">
+          <h1>Valentín Developer/Game</h1>
+          <h1 class="point">.</h1>
+        </div>
+        <i class="bi bi-house-door-fill" style="font-size: 2rem;color: transparent;"></i>
+    </div>
+    <div class="decorator" style="background-color:#1f1f1f"></div>
     
     <div id="phaser">
         <div class="broken-glass"></div>
