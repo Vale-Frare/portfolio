@@ -11,6 +11,15 @@ class RetryMenu extends Phaser.Scene {
 
     create ()
     {
+        document.getElementsByClassName("fire")[0].style.transition = "1s";
+        document.getElementsByClassName("fire")[1].style.transition = "1s";
+        document.getElementsByClassName("fire")[2].style.transition = "1s";
+        document.getElementsByClassName("lava")[0].style.transition = "2s";
+        document.getElementsByClassName("fire")[0].style.bottom = `-1700px`;
+        document.getElementsByClassName("fire")[1].style.bottom = `-1700px`;
+        document.getElementsByClassName("fire")[2].style.bottom = `-1700px`;
+        document.getElementsByClassName("lava")[0].style.bottom = `-1900px`;
+
         document.getElementsByClassName("header")[0].style.marginTop = 0;
         fireAtmos.stop();
         const logo = this.add.image(0, 0, 'logo');
@@ -31,10 +40,10 @@ class RetryMenu extends Phaser.Scene {
             button.visible = false;
             rotoescudo = false;
             points.visible = false;
-            document.getElementsByClassName("fire")[0].style.bottom = `-2000px`;
-            document.getElementsByClassName("fire")[1].style.bottom = `-2000px`;
-            document.getElementsByClassName("fire")[2].style.bottom = `-2000px`;
-            document.getElementsByClassName("lava")[0].style.bottom = `-2000px`;
+            document.getElementsByClassName("fire")[0].style.transition = "0s";
+            document.getElementsByClassName("fire")[1].style.transition = "0s";
+            document.getElementsByClassName("fire")[2].style.transition = "0s";
+            document.getElementsByClassName("lava")[0].style.transition = "0s";
             document.getElementsByClassName("broken-glass")[0].style.opacity = `0%`;
             score = 0;
             plataformas2 = 200;
@@ -42,13 +51,5 @@ class RetryMenu extends Phaser.Scene {
             escudo = false;
             document.getElementsByClassName("header")[0].style.marginTop = "-250px";
         });
-    }
-
-    update ()
-    {
-        document.getElementsByClassName("fire")[0].style.bottom = `${parseFloat(document.getElementsByClassName("fire")[0].style.bottom.replace("px", "")) - 2.5}px`;
-        document.getElementsByClassName("fire")[1].style.bottom = `${parseFloat(document.getElementsByClassName("fire")[1].style.bottom.replace("px", "")) - 2.5}px`;
-        document.getElementsByClassName("fire")[2].style.bottom = `${parseFloat(document.getElementsByClassName("fire")[2].style.bottom.replace("px", "")) - 2.5}px`;
-        document.getElementsByClassName("lava")[0].style.bottom = `${parseFloat(document.getElementsByClassName("lava")[0].style.bottom.replace("px", "")) - 2.5}px`;
     }
 }
