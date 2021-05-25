@@ -270,10 +270,15 @@ class PlayScene extends Phaser.Scene {
         rotoescudos.getChildren()[0].refreshBody();
 
         document.body.style.backgroundColor = `rgba(${255 - ((lava.getChildren()[0].y - 650)/1.9)},0,0)`;
-        document.getElementsByClassName("fire")[0].style.top = `${(Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) + 30}%`;
-        document.getElementsByClassName("fire")[1].style.top = `${(Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) + 30}%`;
-        document.getElementsByClassName("fire")[2].style.top = `${(Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) + 30}%`;
-        document.getElementsByClassName("lava")[0].style.top = `${(Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) + 115}%`;      
+        document.getElementsByClassName("fire")[0].style.bottom = `${
+            ((lava.getChildren()[0].y - 650) * -1.03) + (100)}px`;
+        document.getElementsByClassName("fire")[1].style.bottom = `${
+            ((lava.getChildren()[0].y - 650) * -1.03) + (100)}px`;
+        document.getElementsByClassName("fire")[2].style.bottom = `${
+            ((lava.getChildren()[0].y - 650) * -1.03) + (100)}px`;
+        document.getElementsByClassName("lava")[0].style.bottom = `${
+            ((lava.getChildren()[0].y - 650) * -1.03) + (-1400)}px`;
+              
         fireAtmos.volume = Phaser.Math.Clamp((.50 - Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650)), 0, 1);
         if ((Phaser.Math.Percent((lava.getChildren()[0].y - 650), 0, 650) * 100) < 40) {
             if (document.getElementsByClassName("broken-glass")[0].style.opacity != 1) {

@@ -31,10 +31,10 @@ class RetryMenu extends Phaser.Scene {
             button.visible = false;
             rotoescudo = false;
             points.visible = false;
-            document.getElementsByClassName("fire")[0].style.top = `130%`;
-            document.getElementsByClassName("fire")[1].style.top = `130%`;
-            document.getElementsByClassName("fire")[2].style.top = `130%`;
-            document.getElementsByClassName("lava")[0].style.top = `170%`;
+            document.getElementsByClassName("fire")[0].style.bottom = `-2000px`;
+            document.getElementsByClassName("fire")[1].style.bottom = `-2000px`;
+            document.getElementsByClassName("fire")[2].style.bottom = `-2000px`;
+            document.getElementsByClassName("lava")[0].style.bottom = `-2000px`;
             document.getElementsByClassName("broken-glass")[0].style.opacity = `0%`;
             score = 0;
             plataformas2 = 200;
@@ -46,9 +46,9 @@ class RetryMenu extends Phaser.Scene {
 
     update ()
     {
-        document.getElementsByClassName("fire")[0].style.top = `${parseFloat(document.getElementsByClassName("fire")[0].style.top) + 1}%`;
-        document.getElementsByClassName("fire")[1].style.top = `${parseFloat(document.getElementsByClassName("fire")[1].style.top) + 1}%`;
-        document.getElementsByClassName("fire")[2].style.top = `${parseFloat(document.getElementsByClassName("fire")[2].style.top) + 1}%`;
-        document.getElementsByClassName("lava")[0].style.top = `${parseFloat(document.getElementsByClassName("lava")[0].style.top) + 1}%`;
+        document.getElementsByClassName("fire")[0].style.bottom = `${parseFloat(document.getElementsByClassName("fire")[0].style.bottom.replace("px", "")) - 2.5}px`;
+        document.getElementsByClassName("fire")[1].style.bottom = `${parseFloat(document.getElementsByClassName("fire")[1].style.bottom.replace("px", "")) - 2.5}px`;
+        document.getElementsByClassName("fire")[2].style.bottom = `${parseFloat(document.getElementsByClassName("fire")[2].style.bottom.replace("px", "")) - 2.5}px`;
+        document.getElementsByClassName("lava")[0].style.bottom = `${parseFloat(document.getElementsByClassName("lava")[0].style.bottom.replace("px", "")) - 2.5}px`;
     }
 }

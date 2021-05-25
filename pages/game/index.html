@@ -15,6 +15,7 @@
     <style type="text/css">
         body {
             margin: 0;
+            transition: 0.2s;
         }
         h1 {
             font-weight: bold;
@@ -27,7 +28,7 @@
             margin: 0;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) scale(65%);
             padding: 2px;
             display: flex;
             flex-direction: row;
@@ -118,9 +119,9 @@
         .fire {
             position: fixed;
             content: url('assets/extra/fire.gif');
-            top: 130%;
+            bottom: -640px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -39%) scale(60%);
             pointer-events: none;
             user-select: none;
         }
@@ -138,10 +139,18 @@
         .lava {
             content: url('assets/lava.png');
             position: fixed;
-            top: 170%;
+            bottom: -1800px;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 20;
+        }
+        @media (min-width: 1800px) {
+            #phaser {
+                transform: translate(-50%, -50%) scale(100%);
+            }
+            .fire {
+                transform: translate(-50%, -50%) scale(100%);
+            }
         }
     </style>
 </head>
